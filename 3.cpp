@@ -1,39 +1,15 @@
 #include <iostream>
-#include <cmath>
+#include <stdint.h>
 
 using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "Russian");
+    uint16_t n;
+    cin >> n;
 
-    float x, y;
-    int n;
-    cout << "¬ведите х и n" << endl;
-    cin >> x >> n;
+    n = (n << 8) + (n >> 8);
+    cout << n;
 
-    float s = 0;
-    float t = 1;
-    for (int i=0; i<=n; i++)
-    {
-        s += t;
-        t *= x;
-    }
-
-    cout << s <<endl;
-
-    cout << "¬ведите х, y, n" << endl;
-    cin >> x >> y >> n;
-    s = 1;
-    t = y;
-    float r = x*x;
-    for (int i=1; i<=n; i++)
-    {
-        s += t*r;
-        t *= y;
-        r *= r;
-    }
-
-    cout << s << endl;
     return 0;
 }
